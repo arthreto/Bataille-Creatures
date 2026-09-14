@@ -13,9 +13,9 @@ class Creature
 
     /**
      * Initialise une nouvelle instance de la classe Créature
-     * @param string $nom
-     * @param int $pointAttaque
-     * @param int $pv
+     * @param string $nom Nom de la créature
+     * @param int $pointAttaque Nombre de point d'attaque
+     * @param int $pv Point de vie
      */
     public function __construct(string $nom = "vache", int $pointAttaque = 25, int $pv = 200) {
         $this->nom = $nom;
@@ -25,7 +25,7 @@ class Creature
 
     /**
      * Récupéré le nom de la créature
-     * @return string
+     * @return string Renvoie une chaine de texte
      */
     public function getNom(): string
     {
@@ -34,7 +34,7 @@ class Creature
 
     /**
      * Changer le nom de la créature
-     * @param string $nom
+     * @param string $nom Chaine entier du nouveau nom
      * @return void
      */
     public function setNom(string $nom): void
@@ -44,7 +44,7 @@ class Creature
 
     /**
      * Récupère les points d'attaques de la créature
-     * @return int
+     * @return int Point D'attaque de la créature
      */
     public function getPointAttaque(): int
     {
@@ -54,7 +54,7 @@ class Creature
 
     /**
      * Récupère la vie de la créature
-     * @return int
+     * @return int Renvoie la quantité d'HP
      */
     public function getPv(): int
     {
@@ -62,8 +62,8 @@ class Creature
     }
 
     /**
-     * Renvoie true si la créature est vivante
-     * @return bool
+     * Vérifie si les PV de la créature sont positif
+     * @return bool Si les PV sont positif
      */
     public function estVivant(): bool
     {
@@ -71,8 +71,8 @@ class Creature
     }
 
     /**
-     * Renvoie true si la créature est morte
-     * @return bool
+     * Verifie si les PV de la créature ne sont pas positif
+     * @return bool Si les PV sont negatif ou égal a 0
      */
     public function estMort(): bool
     {
@@ -81,7 +81,7 @@ class Creature
 
     /**
      * Fait subir des dégats sur la créature
-     * @param int $degatSubis
+     * @param int $degatSubis Quantité de dégat a faire subir
      * @return void
      */
     public function subirAttaque(int $degatSubis): void
