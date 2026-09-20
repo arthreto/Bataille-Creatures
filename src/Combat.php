@@ -1,7 +1,7 @@
 <?php
 
 namespace src;
-include_once "src/Creature.php";
+include_once __DIR__ . "/Creature.php";
 
 /**
  * Classe permettant de géré les Combats
