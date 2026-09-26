@@ -101,6 +101,25 @@ body{
 .btn-heal{ background:linear-gradient(180deg,#8be0c9,#3fbf9a); }
 .btn:disabled{ opacity:.4; cursor:not-allowed; }
 
+.img-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; height:clamp(150px,32vw,230px); overflow-y:auto; }
+.img-grid img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:9px; border:2px solid var(--accent); display:block; }
+.img-grid img:hover{ filter:brightness(1.15); }
+a.creature-frame{ cursor:pointer; }
+
+.create-form{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+.create-form label{
+  display:flex; flex-direction:column; gap:4px;
+  font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mist); letter-spacing:.05em;
+}
+.create-form input{
+  font-family:'Nunito',sans-serif; font-weight:700; font-size:14px;
+  padding:8px 10px; border-radius:8px; border:1px solid rgba(212,175,55,0.4);
+  background:rgba(0,0,0,0.35); color:var(--parchment); outline:none;
+}
+.create-form input:focus{ border-color:var(--gold); }
+.create-submit-row{ text-align:center; margin-top:22px; }
+.create-submit-row .btn{ min-width:200px; padding:12px 28px; font-size:14px; }
+
 .card.active{ box-shadow:0 0 0 3px rgba(255,255,255,0.04), 0 0 30px 4px var(--accent); transform:translateY(-4px); }
 .card.active .creature-frame{ animation:flicker 1.8s ease-in-out infinite; }
 @keyframes flicker{ 0%,100%{ box-shadow:inset 0 0 30px rgba(0,0,0,.4), 0 0 18px var(--accent); } 50%{ box-shadow:inset 0 0 30px rgba(0,0,0,.4), 0 0 30px var(--accent); } }
