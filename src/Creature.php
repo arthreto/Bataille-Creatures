@@ -21,6 +21,7 @@ class Creature
         $this->nom = $nom;
         $this->pointAttaque = $pointAttaque;
         $this->pv = $pv;
+        $this->controlePoints();
     }
 
     /**
@@ -87,5 +88,28 @@ class Creature
     public function subirAttaque(int $degatSubis): void
     {
         $this->pv = max(0, $this->pv - $degatSubis);
+    }
+
+    /**
+     * Soigne la créature de 15 PV si elle n'es pas morte
+     */
+    public function seSoigner() {
+        if($this->estVivant()) {
+            $this->pv = min($this->getPv() + 15, 200);
+        }
+    }
+
+    private function controlePoints() {
+        if($this->getPv() < 0) {
+            $this->pv = 0;
+        } elseif ($this->getPv() > 250) {
+            $this->pv = 250;
+        }
+
+        if($this->getPointAttaque() < 0) {
+            $this->pointAttaque = 0;
+        } elseif ($this->getPointAttaque() > 30) {
+            $this->pointAttaque = 30;
+        }
     }
 }
